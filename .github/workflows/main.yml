@@ -32,4 +32,4 @@ jobs:
           context: .
           push: true
           target: final
-          tags: ${{ secrets.DOCKER_USERNAME }}/testappp:latest
+          tags: bodakyuriy/testappp:latest
