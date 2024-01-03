@@ -1,0 +1,23 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: docker-php-demo
+  namespace: default
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      hello-php: web
+  template:
+    metadata:
+      labels:
+        hello-php: web
+    spec:
+      containers:
+        - name: hello-site
+          image: bodakyuriy/testappp
+          imagePullPolicy: Always
+      ports:
+        - port: 6443
+          targetPort: 6443
+          nodePort: 30001
